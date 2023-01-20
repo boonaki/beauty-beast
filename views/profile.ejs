@@ -15,9 +15,18 @@
                   <input type="text" class="form-control" id="title" name="title">
               </div>
               <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
               </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price">
+              </div>
+              <select class="form-select" aria-label="Default select example" id="isOnSale" name="isOnSale">
+                <option selected>Is it on sale?</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
               <div class="mb-3">
                 <label for="imgUpload" class="form-label">Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
