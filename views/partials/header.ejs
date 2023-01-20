@@ -64,7 +64,11 @@
                     <a class="text-white text-lg" href="#">All Products</a>
                 </li>
                 <li class="my-5 w-full border-b-2 pb-3">
-                    <a class="text-white text-lg" href="/login">Login</a>
+                    <% if(locals.user === undefined) {%> 
+                        <a class="text-white text-lg" href="/login">Login</a>
+                    <% }else {%>
+                        <a class="text-white text-lg" href="/logout">Logout</a>
+                    <% } %> 
                 </li>
             </ul>
         </section>
