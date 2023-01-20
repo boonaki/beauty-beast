@@ -13,17 +13,21 @@ const PostSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    caption: {
+    description: {
         type: String,
         required: true,
     },
-    likes: {
+    price: {
         type: Number,
         required: true,
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
+    },
+    isOnSale: {
+        type: Boolean,
+        require: true,
     },
     createdAt: {
         type: Date,
