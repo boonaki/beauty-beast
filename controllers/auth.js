@@ -39,7 +39,8 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/profile");
+    //   res.locals.user = req.session.passport
+      res.redirect(req.session.returnTo || "/");
     });
   })(req, res, next);
 };
