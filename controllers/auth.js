@@ -73,9 +73,9 @@ exports.postSignup = (req, res, next) => {
     validationErrors.push({
       msg: "Password must be at least 8 characters long",
     });
-  if (req.body.password !== req.body.confirmPassword)
+  if (req.body.password !== req.body.confirmPassword) {
     validationErrors.push({ msg: "Passwords do not match" });
-
+  }
   if (validationErrors.length) {
     req.flash("errors", validationErrors);
     return res.redirect("../signup");
