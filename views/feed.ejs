@@ -8,7 +8,7 @@
         </div>
         
         <!-- not a smooth transition but works -->
-        <div id="sortMenuMobile" class="max-h-0 overflow-hidden transistion mx-12 my-4 shadow-xl rounded lg:max-h-full lg:h-[300px] lg:w-[215px]">
+        <div id="sortMenuMobile" class="max-h-0 overflow-hidden transistion mx-12 my-4 shadow-xl rounded lg:border-2 lg:shadow-none lg:max-h-full lg:h-[300px] lg:w-[215px]">
             <div class="m-4">
                 <h3 class="font-bold">Sort Items By:</h3>
                 <form class="my-2" action="">
@@ -40,50 +40,21 @@
     </section>
     <section class="lg:w-[1000px]">
         <div class="flex flex-wrap">
-            <div class="w-1/2 p-4 md:w-1/3">
-                <img class="h-[200px] w-full object-cover rounded-t-lg" src="http://placekitten.com/200/300" alt="">
-                <div class="flex justify-between p-2 border-2 rounded-b-lg">
-                    <h3 class="font-bold">Lorem Ipsum</h3>
-                    <span class="">$9.99</span>
+            <% for (let i = 0; i < products.length; i++) {%>
+                <div class="w-1/2 p-4 md:w-1/3">
+                    <img class="h-[200px] w-full object-cover rounded-t-lg" src="<%= products[i].image %>" alt="">
+                    <div class="flex justify-between p-2 border-2 rounded-b-lg">
+                        <h3 class="font-bold"><%= products[i].title %></h3>
+                        <span class="">$<%= products[i].price %></span>
+                    </div>
+                    <form action="" method="">
+                        <button type="submit" class="w-full text-sm font-semibold text-center py-2 bg-amber-400 my-2 rounded hover:bg-amber-200 transition shadow-xl">Add to cart</button>
+                    </form>
+                    <div class="mt-1 flex">
+                        <a href="/product/<%= products[i]._id %>" class="w-full text-sm font-semibold text-center py-2 bg-amber-400 rounded hover:bg-amber-200 transition shadow-xl">View Product</a>
+                    </div>
                 </div>
-                <form action="" method="">
-                    <button type="submit" class="w-full text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl">Add to cart</button>
-                </form>
-            </div>
-
-            <div class="w-1/2 p-4 md:w-1/3">
-                <img class="h-[200px] w-full object-cover rounded-t-lg" src="http://placekitten.com/200/300" alt="">
-                <div class="flex justify-between p-2 border-2 rounded-b-lg">
-                    <h3 class="font-bold">Lorem Ipsum</h3>
-                    <span class="">$9.99</span>
-                </div>
-                <form action="" method="">
-                    <button type="submit" class="w-full text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl">Add to cart</button>
-                </form>
-            </div>
-
-            <div class="w-1/2 p-4 md:w-1/3">
-                <img class="h-[200px] w-full object-cover rounded-t-lg" src="http://placekitten.com/200/300" alt="">
-                <div class="flex justify-between p-2 border-2 rounded-b-lg">
-                    <h3 class="font-bold">Lorem Ipsum</h3>
-                    <span class="">$9.99</span>
-                </div>
-                <form action="" method="">
-                    <button type="submit" class="w-full text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl">Add to cart</button>
-                </form>
-            </div>
-
-            <div class="w-1/2 p-4 md:w-1/3">
-                <img class="h-[200px] w-full object-cover rounded-t-lg" src="http://placekitten.com/200/300" alt="">
-                <div class="flex justify-between p-2 border-2 rounded-b-lg">
-                    <h3 class="font-bold">Lorem Ipsum</h3>
-                    <span class="">$9.99</span>
-                </div>
-                <form action="" method="">
-                    <button type="submit" class="w-full text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl">Add to cart</button>
-                </form>
-            </div>
-            
+            <% } %> 
         </div>
     </section>
 
