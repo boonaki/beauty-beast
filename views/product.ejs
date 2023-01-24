@@ -1,58 +1,56 @@
 <%- include('partials/header') -%>
-<div class="mainContainer mt-7 flex justify-center">
-  <div class="contentUnderHeader w-4/5">
-    <!-- <h2 class="productTitle text-3xl text-center font-bold">
+<div class="mainContainer mt-7 flex justify-center items-center">
+  <div class="contentUnderHeader">
+    <!-- <h2 class="productTitle text-3xl text-center font-semibold">
       <%= product.title %>
     </h2> -->
-    <div class="productImage&BuyButtons float-left">
-      <div class="itemPicture&BuyButtons">
-        <img
-          class="img-fluid"
-          src="<%= product.image%>"
-          width="512"
-          height="512"
-        />
+    <div class="productImage&BuyButtons">
+      <img
+        class="img-fluid mx-auto"
+        src="<%= product.image%>"
+        width="512"
+        height="512"
+      />
+      <div class="buyButtons mt-7 items-center justify-center flex flex-col">
+        <button
+          type="submit"
+          class="text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl w-4/5 lg:w-2/5"
+        >
+          Buy Now
+        </button>
+        <button
+          type="submit"
+          class="text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl w-4/5 lg:w-2/5"
+        >
+          Add to Cart
+        </button>
       </div>
-      <div class="buyButtons items-center justify-center text-center mt-7">
-        <div class="buyNowButton">
-          <button
-            type="submit"
-            class="w-4/5 text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl"
-          >
-            Buy Now
-          </button>
-        </div>
-        <div class="addToCartButton">
-          <button
-            type="submit"
-            class="w-4/5 text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl"
-          >
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col productInfo float-right mt-11 xs:w-full">
-      <div class="titleOfItem">
+      <div class="productInfo mt-11 text-center mb-11">
         <h3 class="text-2xl"><%= product.title %></h3>
-      </div>
-      <div class="priceOfItem">
         <p class="text-lg">$<%= product.price %></p>
-      </div>
-      <div class="descriptionOfItem mt-7 mb-5 sm:w-2/5">
-        <!-- <p><%= product.description %></p> -->
-        <p class="mb-5">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
-          illo assumenda. Accusantium asperiores reiciendis vero praesentium!
-          Velit exercitationem, harum nesciunt quisquam possimus commodi ipsa
-          minus. Asperiores fuga recusandae numquam ullam?
-        </p>
-        <p class="mb-5">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
-          illo assumenda. Accusantium asperiores reiciendis vero praesentium!
-          Velit exercitationem, harum nesciunt quisquam possimus commodi ipsa
-          minus. Asperiores fuga recusandae numquam ullam?
-        </p>
+        <div class="descriptionOfItem mt-5 mb-5 lg:w-2/5 mx-auto">
+          <!-- <p><%= product.description %></p> -->
+          <p class="mb-5">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+            illo assumenda. Accusantium asperiores reiciendis vero praesentium!
+            Velit exercitationem, harum nesciunt quisquam possimus commodi ipsa
+            minus. Asperiores fuga recusandae numquam ullam? Lorem ipsum dolor
+            sit, amet consectetur adipisicing elit. Aliquid, illo assumenda.
+            Accusantium asperiores reiciendis vero praesentium! Velit
+            exercitationem, harum nesciunt quisquam possimus commodi ipsa minus.
+            Asperiores fuga recusandae numquam ullam?
+          </p>
+          <p class="mb-5">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+            illo assumenda. Accusantium asperiores reiciendis vero praesentium!
+            Velit exercitationem, harum nesciunt quisquam possimus commodi ipsa
+            minus. Asperiores fuga recusandae numquam ullam? Lorem ipsum dolor
+            sit, amet consectetur adipisicing elit. Aliquid, illo assumenda.
+            Accusantium asperiores reiciendis vero praesentium! Velit
+            exercitationem, harum nesciunt quisquam possimus commodi ipsa minus.
+            Asperiores fuga recusandae numquam ullam?
+          </p>
+        </div>
       </div>
     </div>
   </div>
