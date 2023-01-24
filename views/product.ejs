@@ -1,37 +1,60 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= product.title %></h2>
-      <img class="img-fluid" src="<%= product.image%>" />
-      <div class="row justify-content-between">
-        <form
-          class="col-1"
-          action="/product/likeProduct/<%= product.id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= product.likes %></h3>
-        <%if(product.user == user.id){ %>
-        <form
-          action="/product/deleteProduct/<%= product.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        </form>
-        <%}%>
+<div class="mainContainer mt-7 flex justify-center">
+  <div class="contentUnderHeader w-4/5">
+    <!-- <h2 class="productTitle text-3xl text-center font-bold">
+      <%= product.title %>
+    </h2> -->
+    <div class="productImage&BuyButtons float-left">
+      <div class="itemPicture&BuyButtons">
+        <img
+          class="img-fluid"
+          src="<%= product.image%>"
+          width="512"
+          height="512"
+        />
+      </div>
+      <div class="buyButtons items-center justify-center text-center mt-7">
+        <div class="buyNowButton">
+          <button
+            type="submit"
+            class="w-4/5 text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl"
+          >
+            Buy Now
+          </button>
+        </div>
+        <div class="addToCartButton">
+          <button
+            type="submit"
+            class="w-4/5 text-center py-2 bg-amber-400 mt-2 rounded hover:bg-amber-200 transition shadow-xl"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
-    <div class="col-3 mt-5">
-      <p><%= product.caption %></p>
-    </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/admin">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+    <div class="col productInfo float-right mt-11 xs:w-full">
+      <div class="titleOfItem">
+        <h3 class="text-2xl"><%= product.title %></h3>
+      </div>
+      <div class="priceOfItem">
+        <p class="text-lg">$<%= product.price %></p>
+      </div>
+      <div class="descriptionOfItem mt-7 mb-5 sm:w-2/5">
+        <!-- <p><%= product.description %></p> -->
+        <p class="mb-5">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+          illo assumenda. Accusantium asperiores reiciendis vero praesentium!
+          Velit exercitationem, harum nesciunt quisquam possimus commodi ipsa
+          minus. Asperiores fuga recusandae numquam ullam?
+        </p>
+        <p class="mb-5">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+          illo assumenda. Accusantium asperiores reiciendis vero praesentium!
+          Velit exercitationem, harum nesciunt quisquam possimus commodi ipsa
+          minus. Asperiores fuga recusandae numquam ullam?
+        </p>
+      </div>
     </div>
   </div>
 </div>
-
 <%- include('partials/footer') -%>
