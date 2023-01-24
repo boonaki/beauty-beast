@@ -1,15 +1,85 @@
 <%- include('partials/header') -%>
-  <div class="container">
+
+<main>
+    <section class="">
+        
+        <div class="mt-8 ml-8">
+            <span class="px-6 py-3 rounded border-black bg-amber-400 shadow" onclick="sortMenuMobile()">Sort</span>
+        </div>
+        
+        <!-- not a smooth transition but works -->
+        <div id="sortMenuMobile" class="max-h-0 overflow-hidden transistion mx-12 my-4 shadow-xl rounded">
+            <div class="m-4">
+                <h3 class="font-bold">Sort Items By:</h3>
+                <form class="" action="">
+                    <input id="p-low-high" value="low" class="" type="radio">
+                    <label for="p-low-high">Price (low-high)</label>
+                </form>
+    
+                <form class="" action="">
+                    <input id="p-high-low" value="high" class="" type="radio">
+                    <label for="p-high-low">Price (high-low)</label>
+                </form>
+    
+                <form class="" action="">
+                    <input id="best-sellers" value="best" class="" type="radio">
+                    <label for="best-sellers">Best Sellers</label>
+                </form>
+    
+                <form class="" action="">
+                    <input id="women" value="women" class="" type="radio">
+                    <label for="women">Women</label>
+                </form>
+    
+                <form class="" action="">
+                    <input id="men" value="men" class="" type="radio">
+                    <label for="men">Men</label>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="">
+        <div class="flex flex-wrap">
+            <div class="w-1/2">
+                <img class="h-[200px]" src="http://placekitten.com/200/300" alt="">
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+
+            <div class="w-1/2">
+                <img class="h-[200px]" src="http://placekitten.com/200/300" alt="">
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+
+            <div class="w-1/2">
+                <img class="h-[200px]" src="http://placekitten.com/200/300" alt="">
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+
+            <div class="w-1/2">
+                <img class="h-[200px]" src="http://placekitten.com/200/300" alt="">
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+
+
+
+<!-- <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
+        <%# for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
+            <a href="/post/<%# posts[i]._id%>">
+              <img class="img-fluid" src="<%# posts[i].image%>">
             </a>
           </li>
-        <% } %>
+        <%# } %>
         </ul>
     </div>
-  </div>  
+  </div>   -->
 <%- include('partials/footer') -%>
