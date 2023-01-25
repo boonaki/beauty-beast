@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect('/profile');
+    return res.redirect('/admin');
   }
   res.render('login', {
     title: 'Login',
@@ -59,7 +59,7 @@ exports.logout = (req, res) => {
 
 exports.getSignup = (req, res) => {
   if (req.user) {
-    return res.redirect('/profile');
+    return res.redirect('/admin');
   }
   res.render('signup', {
     title: 'Create Account',
@@ -111,7 +111,7 @@ exports.productSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect('/profile');
+          res.redirect('/admin');
         });
       });
     }
