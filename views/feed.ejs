@@ -1,15 +1,63 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-    </div>
-  </div>  
+
+<main class="lg:flex">
+    <section class="">
+        
+        <div class="mt-8 ml-8 lg:hidden">
+            <span class="px-6 py-3 rounded border-black bg-amber-400 shadow" onclick="sortMenuMobile()">Sort</span>
+        </div>
+        
+        <!-- not a smooth transition but works -->
+        <div id="sortMenuMobile" class="max-h-0 overflow-hidden transistion mx-12 my-4 shadow-xl rounded lg:border-2 lg:shadow-none lg:max-h-full lg:h-[300px] lg:w-[215px]">
+            <div class="m-4">
+                <h3 class="font-bold">Sort Items By:</h3>
+                <form class="my-2" action="">
+                    <input id="p-low-high" value="low" class="" type="radio">
+                    <label for="p-low-high">Price (low-high)</label>
+                </form>
+    
+                <form class="my-2" action="">
+                    <input id="p-high-low" value="high" class="" type="radio">
+                    <label for="p-high-low">Price (high-low)</label>
+                </form>
+    
+                <form class="my-2" action="">
+                    <input id="best-sellers" value="best" class="" type="radio">
+                    <label for="best-sellers">Best Sellers</label>
+                </form>
+    
+                <form class="my-2" action="">
+                    <input id="women" value="women" class="" type="radio">
+                    <label for="women">Women</label>
+                </form>
+    
+                <form class="my-2" action="">
+                    <input id="men" value="men" class="" type="radio">
+                    <label for="men">Men</label>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="lg:w-[1000px]">
+        <div class="flex flex-wrap">
+            <% for (let i = 0; i < products.length; i++) {%>
+                <div id="product-<%= i %>" class="w-1/2 p-4 md:w-1/3">
+                    <a href="/product/<%= products[i]._id %>"><img class="h-[200px] w-full object-cover rounded-t-lg" src="<%= products[i].image %>" alt="<%= products[i].title %> "></a>
+                    <div class="flex justify-between p-2 border-2 rounded-b-lg">
+                        <h3 class="font-bold"><%= products[i].title %></h3>
+                        <span class="">$<%= products[i].price %></span>
+                    </div>
+                    <form action="" method="">
+                        <button type="submit" class="w-full text-sm font-semibold text-center py-2 bg-amber-400 my-2 rounded hover:bg-amber-200 transition shadow-xl">Add to cart</button>
+                    </form>
+                    <div class="mt-1 flex">
+                        <a href="/product/<%= products[i]._id %>" class="w-full text-sm font-semibold text-center py-2 bg-amber-400 rounded hover:bg-amber-200 transition shadow-xl">View Product</a>
+                    </div>
+                </div>
+            <% } %> 
+        </div>
+    </section>
+
+</main>
+
 <%- include('partials/footer') -%>
