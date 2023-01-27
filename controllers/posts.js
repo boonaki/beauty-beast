@@ -14,6 +14,7 @@ module.exports = {
     try {
       const posts = await Post.find({ user: req.user.id });
       res.render("checkout.ejs", { posts: posts, user: req.user });
+  
     } catch (err) {
       console.log(err);
     }
