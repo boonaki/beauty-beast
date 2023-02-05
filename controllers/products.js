@@ -18,6 +18,14 @@ module.exports = {
       console.log(err);
     }
   },
+  getCheckout: async (req, res) => {
+    try {
+      const products = await Product.find({ user: req.user.id });
+      res.render("checkout.ejs", { products: products, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getProduct: async (req, res) => {
     try {
       const product = await Product.findById(req.params.id);
