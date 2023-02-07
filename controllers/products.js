@@ -20,8 +20,8 @@ module.exports = {
   },
   getCheckout: async (req, res) => {
     try {
-      const products = await Product.find({ user: req.user.id });
-      res.render("checkout.ejs", { products: products, user: req.user });
+      const products = await Product.find().sort({ createdAt: 'desc' }).lean();
+      res.render('checkout.ejs', { products: products });
     } catch (err) {
       console.log(err);
     }
