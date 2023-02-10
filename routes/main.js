@@ -15,5 +15,9 @@ router.get('/admin', ensureAuth, productsController.getProfile);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
+router.get("/congratulations", homeController.getCongratulations)
 
 module.exports = router;
+
+// npm install
+// npm run start
