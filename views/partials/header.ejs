@@ -29,50 +29,78 @@
     </head>
     <body>
         <header class="overflow-hidden">
-            <nav class="bg-[#5a5a5a] flex justify-between px-4 py-6 items-center">
-                <h1 class="text-lg text-white font-bold"><a href="/">Beauty Beast</a></h1>
-                <div class="flex">
-                    <span class="px-2 z-10 hover:cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <nav class="bg-[#BBDEF0] flex justify-between px-4 py-6 items-center text-white lg:bg-white lg:text-black">
+                <span class="px-2 z-10 hover:cursor-pointer lg:hidden" onclick="menu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 lg:stroke-black" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </span>
+
+                <div class="text-center leading-3 lg:text-start">
+                    <a href="/">
+                        <h1 class="text-2xl font-bold font-serif">Beauty Beast & Co.</h1>
+                        <!-- <p class="italic text-white font-semibold font-serif lg:text-lg lg:leading-[12px]"></p> -->
+                    </a>
+                </div>
+
+                <div class="flex lg:items-center lg:justify-end">
+                    <form action="" class="hidden lg:flex mr-4 items-center justify-center">
+                        <div class="flex border-2 rounded-xl">
+                            <input type="search" name="q" class="px-4 py-2 w-[200px] rounded-l-xl focus:border-white focus:outline-none" placeholder="Search...">
+                            <button type="submit" class="flex items-center justify-center px-3 border-l">
+                                <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <a href="/cart" class="px-2 z-10 hover:cursor-pointer flex items-center font-semibold lg:mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart mr-1 lg:stroke-black lg:h-[36px] lg:w-[36px]" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <circle cx="6" cy="19" r="2" />
                             <circle cx="17" cy="19" r="2" />
                             <path d="M17 17h-11v-14h-2" />
                             <path d="M6 5l14 1l-1 7h-13" />
                         </svg>
-                    </span>
-    
-                    <span class="px-2 z-10 hover:cursor-pointer" onclick="menu()">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <line x1="4" y1="6" x2="20" y2="6" />
-                            <line x1="4" y1="12" x2="20" y2="12" />
-                            <line x1="4" y1="18" x2="20" y2="18" />
-                        </svg>
-                    </span>
+                        0
+                    </a>
                 </div>
             </nav>
-            <section id="side-bar" class="fixed h-full w-full side-bar transition translate-x-[100%] md:flex md:justify-end">
-                <ul class="p-6 bg-stone-600 h-full w-full md:w-1/2">
-                    <li class="my-5 w-full border-b-2 pb-3">
-                        <a class="text-white text-lg" href="/">Home</a>
-                    </li>
-                    <li class="my-5 w-full border-b-2 pb-3">
-                        <a class="text-white text-lg" href="#">Orders</a>
-                    </li>
-                    <li class="my-5 w-full border-b-2 pb-3">
-                        <a class="text-white text-lg" href="#">All Products</a>
-                    </li>
-                    <li class="my-5 w-full border-b-2 pb-3">
+            <div class="hidden bg-[#BBDEF0] lg:flex justify-center">
+                <div class="flex justify-evenly text-white font-semibold w-[1024px] xl:w-[1200px]">
+                    <a href="/" class="mx-8 py-4 cursor-pointer hover:underline">Home</a>
+                    <a href="/shop" class="mx-8 py-4 cursor-pointer hover:underline">Shop</a>
+                    <a href="/shop" class="mx-8 py-4 cursor-pointer hover:underline">Checkout</a>
+                    <% if(user?._id) { %>
+                        <a href="/logout" class="mx-8 py-4 cursor-pointer hover:underline">Logout</a>
+                    <% }else { %>
+                        <a href="/login" class="mx-8 py-4 cursor-pointer hover:underline">Login</a>
+                    <% } %>
+                </div> 
+            </div>
+            <section id="side-bar" class="fixed h-full w-5/6 side-bar transition translate-x-[-100%] shadow-xl z-50 md:shadow-none lg:hidden">
+                <ul class="p-6 overflow-y-scroll bg-white h-full w-full text-[#202020] text-lg md:shadow-xl md:w-1/2">
+                    <a class="" href="/"><li class="my-5 w-full border-b-2 pb-3">
+                        <span class="font-semibold">Home</span>
+                    </li></a>
+                    <a class="" href="/shop"><li class="my-5 w-full border-b-2 pb-3">
+                        <span class="font-semibold">Shop</span>
+                    </li></a>
+                    <a class="" href="/checkout"><li class="my-5 w-full border-b-2 pb-3">
+                        <span class="font-semibold">Cart</span>
+                    </li></a>
+                    <li class="my-5 w-full border-b-2 pb-3 font-semibold">
                         <% if(locals.user === undefined) {%> 
-                            <a class="text-white text-lg" href="/login">Login</a>
+                            <a class="" href="/login">Login</a>
                         <% }else {%>
-                            <a class="text-white text-lg" href="/logout">Logout</a>
+                            <a class="" href="/logout">Logout</a>
                         <% } %> 
                     </li>
                 </ul>
             </section>
         </header>
-
-    </body>
-</html>
