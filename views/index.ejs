@@ -1,11 +1,67 @@
 <%- include('partials/header') -%>
 
 <main class="">
-    <div class="">
-        <a href="/login" class=""> Login</a>
-        <a href="/signup" class=""> Signup</a>
+  <section class="relative w-full mt-7">
+    <h1 class="text-center text-black text-4xl font-extrabold capitalize mb-7">
+      Featured
+    </h1>
+    <div class="relative w-full flex flex-row items-center overscroll-none">
+      <div class="relative w-full flex justify-center">
+        <button
+          class="prev-arrow rounded-full p-3 text-black text-xl hover:text-2xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-arrow-big-left"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"
+            />
+          </svg>
+        </button>
+        <img
+          src="/imgs/featuredOne.jpg"
+          class="w-8/12 object-cover sm:w-3/5 md:w-7/12 lg:w-5/12 xl:w-5/12"
+          alt="Featured Items"
+        />
+        <button
+          class="prev-arrow rounded-full p-3 text-black text-xl hover:text-2xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-arrow-big-right"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M4 9h8v-3.586a1 1 0 0 1 1.707 -.707l6.586 6.586a1 1 0 0 1 0 1.414l-6.586 6.586a1 1 0 0 1 -1.707 -.707v-3.586h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
+  </section>
+  <div class="flex flex-col">
+    <a href="/login" class=""> Login</a>
+    <a href="/signup" class=""> Signup</a>
+    <a href="/congratulations" class="">Test Congratulations</a>
+  </div>
 </main>
-    
 
 <%- include('partials/footer') -%>

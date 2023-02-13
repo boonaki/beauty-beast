@@ -24,3 +24,9 @@ function sortMenuMobile(){
         sortMenu.classList.add('max-h-100')
     }
 }
+
+
+function removeItem() {
+    let productItems = document.getElementById('items')
+    console.log(products[i]._id) 
+}

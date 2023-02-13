@@ -4,4 +4,7 @@ module.exports = {
     res.locals.user = req.user?.userName;
     res.render("index.ejs");
   },
+  getCongratulations: (req, res) => {
+    res.render("congratulations.ejs");
+  }
 };

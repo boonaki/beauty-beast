@@ -11,7 +11,7 @@ exports.getLogin = (req, res) => {
   });
 };
 
-exports.productLogin = (req, res, next) => {
+exports.postLogin = (req, res, next) => {
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
     validationErrors.push({ msg: 'Please enter a valid email address.' });
@@ -66,7 +66,7 @@ exports.getSignup = (req, res) => {
   });
 };
 
-exports.productSignup = (req, res, next) => {
+exports.postSignup = (req, res, next) => {
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
     validationErrors.push({ msg: 'Please enter a valid email address.' });
