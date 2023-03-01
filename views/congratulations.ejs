@@ -1,9 +1,31 @@
-<%- include('partials/header') -%>
-  <div class="flex justify-center items-center">Success Animation</div>
-  <h2 class="text-center text-3xl">CONGRATULATIONS</h2>
-  <p class="text-center">Go back to main page</p>
-  <button class="color blue">Back Main</button>
+<%- include('partials/headerLogin') -%>
+  <div class="mt-9">
+    <div>
+      <h2 class="text-center text-3xl">CONGRATULATIONS</h2>
+    </div>
+    
+    <div class="flex justify-center items-center ml-11">
+      <lottie-player src="https://assets3.lottiefiles.com/temp/lf20_bpLhgE.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay>
+      </lottie-player>
+    </div>
+    
+    <div class="flex flex-col justify-center items-center mt-5">
+<!--       <p class="">Go back to main page</p> -->
+      <a href="/">
+        <button type="button" class="bg-blue-300 p-2 pt-1 rounded">Shop Some More</button>
+      </a>
+    </div> 
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+  </div>
 <%- include('partials/footer') -%>
+
+<!--   <a href="/index"></a> -->
+
+  
+<!-- if the config files are missing -->
+<!-- https://dev.to/aozoradev/getting-node-js-16-in-replit-mha -->
 
 <!-- To use TailwindCSS write, class="" -->
 <!--   Ex: <p class="text-center text-2xl">This is centered and xl text</p> -->
@@ -19,6 +41,8 @@
 <!-- add button to go back to the home page -->
 
 <!--
+bg-color-300 = background - color name - amount of color
+rounded = rounded border
 my = margin y
 my-auto = automatically set the y margin
 mx = margin x
@@ -37,3 +61,6 @@ min-w-screen = width is the full width of the screen
 
 <!-- array.reduce((a, b) => a - b)
 array.map((x) => x * 2) [x * 2] -->
+
+  <!--@https://lottiefiles.com/5509-confetti-cannon
+  <iframe src="https://embed.lottiefiles.com/animation/5509"></iframe> -->
