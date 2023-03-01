@@ -18,8 +18,3 @@
 # Run
 
 "npm start"
-#� �b�e�a�u�t�y�-�b�e�a�s�t�
-�
-�#� �b�e�a�u�t�y�-�b�e�a�s�t�
-�
-�
