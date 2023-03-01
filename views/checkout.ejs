@@ -2,29 +2,63 @@
   
 <!-- Product Start -->
 <ul class="">
-  <% for(var i=0; i<posts.length; i++) {%>
-    <li class="">
-      <div class="flex flex-col max-w-screen-lg p-3 pt-10 mx-auto my-4 text-white rounded-lg bg-gray-100 ">
+  <!-- Right now is getting everything from the "Products" collections, later is going to get only whats inside the cart -->
+  <% for(var i=0; i< products.length; i++) { %>
+    <li class="" id="items">
+      <div class="flex flex-col max-w-screen-lg p-3 pt-10 mx-auto my-4 text-white rounded-lg bg-gray-200 ">
 
         <div class="flex flex-row w-full">
-          <a href="/post/<%= posts[i]._id%>" >
-            <img class="object-cover w-64 h-64 max-w-sm rounded-lg grow-0" src="<%= posts[i].image%>" alt="">
+          <a href="/product/<%= products[i]._id%>" >
+            <img class="object-cover w-64 h-64 max-w-sm rounded-lg grow-0" src="<%= products[i].image%>" alt="">
           </a>
 
           <div class="flex flex-col justify-between">
-            <h3 class="ml-3 text-sky-700 grow-1">  <%= posts[i].description%></h3>
-            <h3 class="mx-3 text-black"><span class="bold">Price:$</span><%= posts[i].price%></h3>
+            <h3 class="ml-3 text-sky-700 grow-1">  <%= products[i].description%></h3>
+            <h3 class="mx-3 text-black"><span class="bold">Price:$</span><%= products[i].price%></h3>
           </div>
         </div>
         
         <div class="flex justify-end ">
-        <button class="p-2 bg-orange-500 rounded-lg">Delete</button>
+          <form action="/products/deleteProduct/<%= products.id %>?_method=DELETE" method="POST">
+            <button class="p-2 bg-orange-500 rounded-lg">Delete</button>
+          </form>
+        
         </div>
       </div>
     </li>
   <% } %>
 </ul>
+
 <!-- Product End -->
+
+
+<!-- Getting the sum of all the products -->
+<% let productPrice = [] %>
+
+<% for(var i=0; i< products.length; i++) { %>
+  <% productPrice.push(products[i].price)%> 
+ <% } %> 
+ 
+ <% let sum = productPrice.reduce((accumulator, value) => accumulator + value, 0) %>
+
+ <!-- Shipping cost -->
+ <% let shipping = 4.99 %>
+
+
+
+<!-- Getting the products id's -->
+<% let productList = [] %>
+
+<% for(var i=0; i< products.length; i++) { %>
+  <% productList.push(products[i]._id)%> 
+ <% } %> 
+ 
+ <%= console.log(productList)%>
+ 
+
+
+<!-- Deleting an item form the array  -->
+
 
 
 
@@ -33,7 +67,7 @@
     <div class="space-y-1">
       <div class="flex justify-between text-gray-500 gap-4">
         <span>Subtotal</span>
-        <span>$129.99</span>
+        <span>$ <%= sum %></span>
       </div>
 
       <div class="flex justify-between text-gray-500 gap-4 max-w-screen-lg mx-auto">
@@ -47,7 +81,7 @@
       <span class="text-lg font-bold">Total</span>
 
       <span class="flex flex-col items-end">
-        <span class="text-lg font-bold">$134.98 USD</span>
+        <span class="text-lg font-bold"><%= `${sum + shipping}` %> USD</span>
        
       </span>
     </div>
